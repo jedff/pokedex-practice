@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/icon.png" type="image/x-icon">
+  <title>Pokédex</title>
+  <link rel="stylesheet" href="/index.css">
+  <script defer src="/index.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Pokédex</h1>
+    <div class="wrapper">
+      <div class="image-search">
+        <div class="display_frame">
+          <div class="display">
+            <div class="name" id="pName"></div>
+            <div class="img"><img src="/img/pokeball.png" alt="pokemon image" id="pImage"  no-cache></div>
+          </div>
+        </div>
+        <div class="search_div">
+          <input class="search_input" type="search" name="searchInput" id="searchInput" placeholder="Search" autofocus>
+          <div onclick="getPokemon()" class="search_btn" id="searchBtn"></div>
+        </div>
+      </div>
+      <div class="pokemon_info">
+        <div class="type_div">
+          <span>
+            Type:
+          </span>
+          <ul id="pTypes">
+          </ul>
+        </div>
+        <div class="stats_wrapper">
+          <div class="stats_div">
+            <ul class="stats_list" id="pStats">
+              <li>
+                <span class="stat_title">
+                  HP
+                </span>
+                <meter class="stat_meter" min="0" max="255"></meter>
+                <span class="bstat_num"></span>
+              </li>
+              <li>
+                <span class="stat_title">
+                  ATK
+                </span>
+                <meter class="stat_meter" min="0" max="255"></meter>
+                <span class="bstat_num"></span>
+              </li>
+              <li>
+                <span class="stat_title">
+                  DEF
+                </span>
+                <meter class="stat_meter" min="0" max="255"></meter>
+                <span class="bstat_num"></span>
+              </li>
+              <li>
+                <span class="stat_title">
+                  SP. ATK
+                </span>
+                <meter class="stat_meter" min="0" max="255"></meter>
+                <span class="bstat_num"></span>
+              </li>
+              <li>
+                <span class="stat_title">
+                  SP. DEF
+                </span>
+                <meter class="stat_meter" min="0" max="255"></meter>
+                <span class="bstat_num"></span>
+              </li>
+              <li>
+                <span class="stat_title">
+                  SPEED
+                </span>
+                <meter class="stat_meter" min="0" max="255"></meter>
+                <span class="bstat_num"></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="moves_div">
+          <span class="moves_title">
+            Moves:
+          </span>
+          <ul class="moves_list" id="pMoves">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
