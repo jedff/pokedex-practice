@@ -6,7 +6,8 @@ const getPokemon = async (evt) => {
   const pImage = document.getElementById('pImage')
   const pTypes = document.getElementById('pTypes')
   const pStats = document.getElementById('pStats')
-  const pMoves = document.getElementById('pMoves')
+  const movesDiv = document.getElementById('movesDiv')
+ 
 
   const pokemon = searchInput.value
   
@@ -41,7 +42,16 @@ const getPokemon = async (evt) => {
   })
   
   
-  pMoves.innerHTML = ""
+  movesDiv.innerHTML = ""
+  const movesTitle = document.createElement('span')
+  movesTitle.setAttribute("id", "moves_title");
+  const txtMoves = document.createTextNode("Moves:")
+  movesTitle.appendChild(txtMoves)
+  const pMoves = document.createElement('ul')
+  pMoves.setAttribute("id", "pMoves");
+  pMoves.setAttribute("class", "moves_list");
+  movesDiv.appendChild(movesTitle)
+  movesDiv.appendChild(pMoves)
   const pokeMoves = data.moves.map(m => m.move.name)
   pokeMoves.forEach(m => {
     const txtMove = document.createTextNode(capitalize(m))
@@ -49,9 +59,8 @@ const getPokemon = async (evt) => {
     pMove.appendChild(txtMove)
     pMoves.appendChild(pMove)
   });
+  
 
-
-  console.log(pImage)
 
   searchInput.value = "";
 

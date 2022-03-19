@@ -3,7 +3,7 @@
 :root {
   --border: ridge 4px rgb(223, 73, 73);
   --bshadow: 0 0 4px rgb(0, 0, 0);
-  --bg-sec: #f71a1a;
+  --bg-sec: #e60000;
   --pad-frame: clamp(10px, 3vw, 50px);
   --ff: 'DotGothic16', sans-serif;
 }
@@ -42,13 +42,10 @@ img {
   max-width: 100%;
   object-fit: contain;
 }
-input:placeholder-shown {
-  font-style: italic;
-}
+
 h1 {
   text-align: center;
 }
-
 
 .wrapper {
   display: flex;
@@ -65,7 +62,7 @@ h1 {
   border-radius: 30px 0 0 30px;
 }
 .pokemon_info {
-  background-color: red;
+  background-color: rgb(255, 0, 0);
   border: ridge 10px rgb(255, 70, 70);
   border-radius: 0 30px 30px 0;
   padding-top: var(--pad-frame);
@@ -79,7 +76,7 @@ h1 {
 }
 
 .display_frame {
-  background-color: #f71a1a;
+  background-color: #e60000;
   max-width: 500px;
   padding: var(--pad-frame);
   border-radius: 20px;
@@ -186,7 +183,8 @@ h1 {
   padding: clamp(.1rem, .6vw, .5rem);
 }
 .stat_title {
-  font-size: clamp(.5rem, 1.7vw, 1.2rem);
+  font-size: clamp(.7rem, 1.5vw, 1.2rem);
+  font-weight: bold;
   position: relative;
   width: 30%;
   left: 20px;
@@ -198,7 +196,6 @@ h1 {
   flex-basis: 10%;
   font-size: clamp(.5rem, 1.5vw, 1rem);
   opacity: .5;
-  font-style: italic;
   transform: rotate(90deg);
 }
 .stat_meter {
@@ -221,7 +218,7 @@ h1 {
   border: var(--border);
   background-color: var(--bg-sec);
   position: absolute;
-  top: clamp(210px, 33vw, 400px);
+  top: clamp(210px, 31vw, 400px);
   display: flex;
   flex-flow: column;
   font-size: clamp(.8rem, 2vw, 1.5rem);
@@ -229,6 +226,9 @@ h1 {
   gap: .2rem;
   align-items: center;
   z-index: 1;
+}
+.moves_div img {
+  opacity: .4;
 }
 .moves_list {
   list-style: none;
@@ -244,6 +244,7 @@ h1 {
   height: clamp(60px, 15vw, 180px);
   overflow-y: scroll;
 }
+
 .moves_list li {
   padding: clamp(.2rem, .3vw, .4rem);
   text-align: center;
@@ -260,14 +261,13 @@ h1 {
   .wrapper {
     flex-flow: column;
   }
-  .pokemon_info {background-color: beige;
-    flex: 1 0 450px;
+  .pokemon_info {
+    flex: 1 0 550px;
+    border-radius: 0 0 30px 30px;
   }
   .image-search{
     border-radius: 30px 30px 0 0;
-  }
-  .pokemon_info{
-    border-radius: 0 0 30px 30px;
+    align-items: center;
   }
   .search_input {
     font-size: clamp(.5rem, 5vw, 1.5rem);
